@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqBenchmarks462", "LinqBenchmarks462\LinqBenchmarks462.csproj", "{6664E8EE-3FCD-4293-8022-3A44B5EFC583}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqBenchmarksCore", "LinqBenchmarksCore\LinqBenchmarksCore.csproj", "{62A97753-9E9B-4C52-BD75-B3DE15C406A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6664E8EE-3FCD-4293-8022-3A44B5EFC583}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6664E8EE-3FCD-4293-8022-3A44B5EFC583}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6664E8EE-3FCD-4293-8022-3A44B5EFC583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62A97753-9E9B-4C52-BD75-B3DE15C406A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62A97753-9E9B-4C52-BD75-B3DE15C406A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62A97753-9E9B-4C52-BD75-B3DE15C406A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62A97753-9E9B-4C52-BD75-B3DE15C406A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
