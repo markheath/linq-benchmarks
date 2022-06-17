@@ -5,35 +5,14 @@ using BenchmarkDotNet.Running;
 using Nessos.LinqOptimizer.Base;
 using Nessos.LinqOptimizer.CSharp;
 
-namespace LinqBenchmarks462
+namespace LinqBenchmarks48
 {
     class Program
     {
         static void Main(string[] args)
         {
             var summary = BenchmarkRunner.Run<LinqTests>();
-            Console.Read();
-
-            /* with N = 10000000
-                           Method |     Mean |     Error |    StdDev |
---------------------------------- |---------:|----------:|----------:|
-                          SumLinq | 959.5 ms | 18.962 ms | 25.314 ms |
-                       SumForEach | 801.6 ms |  2.068 ms |  1.727 ms |
-                 SumLinqOptimizer | 851.2 ms |  5.965 ms |  5.580 ms |
- SumLinqOptimizerIncludingCompile | 846.8 ms |  4.983 ms |  4.661 ms |
-                      SumParallel | 213.9 ms |  1.512 ms |  1.415 ms |
-
-
-            second run
-                           Method |     Mean |      Error |     StdDev |
---------------------------------- |---------:|-----------:|-----------:|
-                          SumLinq | 905.9 ms | 36.4699 ms | 39.0223 ms |
-                       SumForEach | 787.4 ms |  0.8437 ms |  0.7479 ms |
-                 SumLinqOptimizer | 835.9 ms |  1.2915 ms |  1.1449 ms |
- SumLinqOptimizerIncludingCompile | 836.0 ms |  3.7413 ms |  3.4996 ms |
-                      SumParallel | 213.0 ms |  1.4215 ms |  1.3296 ms |
-             *
-             */
+            //Console.Read();
         }
     }
     public class LinqTests
