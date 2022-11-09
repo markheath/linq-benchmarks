@@ -5,19 +5,17 @@ using BenchmarkDotNet.Running;
 using Nessos.LinqOptimizer.Base;
 using Nessos.LinqOptimizer.CSharp;
 
-namespace LinqBenchmarks48
+namespace LinqBenchmarksCore
 {
+    // dotnet run -c Release -f net7.0 -- --filter * --runtimes net48 net60 net70
     class Program
     {
         static void Main(string[] args)
-        {
-            var summary = BenchmarkRunner.Run<LinqTests>();
-            //Console.Read();
-        }
+            => BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
     }
+
     public class LinqTests
     {
-
         public const int N = 10000000;
 
         private IQueryExpr<double> compiledQuery; 
@@ -32,7 +30,6 @@ namespace LinqBenchmarks48
             compiledQuery.Compile();
         }
 
-
         [Benchmark]
         public double SumLinq()
         {
@@ -43,8 +40,20 @@ namespace LinqBenchmarks48
                 .Sum();
         }
 
+        private const double twoPi = 2 * Math.PI;
+        
         [Benchmark]
-        public double SumForEach()
+        public double SumLinqTwoPi()
+        {            
+            return Enumerable.Range(1, N)
+                .Select(n => n * 2)
+                .Select(n => Math.Sin((twoPi * n) / 1000))
+                .Select(n => Math.Pow(n, 2))
+                .Sum();
+        }
+
+        [Benchmark]
+        public double SumForLoop()
         {
             double sum = 0;
             for (int n = 1; n <= N; n++)
@@ -57,8 +66,7 @@ namespace LinqBenchmarks48
 
             return sum;
         }
-
-
+        
         [Benchmark]
         public double SumLinqOptimizer()
         {
